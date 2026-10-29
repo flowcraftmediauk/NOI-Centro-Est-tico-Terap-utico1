@@ -1,4 +1,5 @@
 import { ClinicData, IntakeQuestion } from '../types/clinic';
+import { clinicImages } from '../assets/images';
 
 export const initialClinicData: ClinicData = {
   businessName: 'NOI Centro Estético Terapéutico',
@@ -25,7 +26,6 @@ export const initialClinicData: ClinicData = {
   openingHours: '',
   
   // Locations verified from official Instagram profile: Cuenca, Paute, Azogues
-  // Specific street addresses left empty for confirmation
   locations: [
     {
       city: 'Cuenca',
@@ -52,7 +52,7 @@ export const initialClinicData: ClinicData = {
       category: 'corporal',
       description: 'Drenaje linfático manual y protocolos para reducción de inflamación, prevención de fibrosis y aceleración de la recuperación postquirúrgica.',
       price: '', // Left empty (never invent prices)
-      image: '/src/assets/images/services_therapeutic_stones_1793280729422.jpg',
+      image: clinicImages.servicesStones,
       isFeatured: true,
       status: 'verified'
     },
@@ -62,7 +62,7 @@ export const initialClinicData: ClinicData = {
       category: 'facial',
       description: 'Higiene cutánea intensiva, exfoliación, descongestión e hidratación profunda con activos botánicos y aparatología cosmiátrica.',
       price: '',
-      image: '/src/assets/images/services_facial_skincare_1793280727497.jpg',
+      image: clinicImages.about,
       isFeatured: false,
       status: 'verified'
     },
@@ -72,7 +72,7 @@ export const initialClinicData: ClinicData = {
       category: 'masajes',
       description: 'Terapia geotermal que combina suaves maniobras de masaje con el calor de piedras volcánicas basálticas para aliviar la tensión muscular profunda.',
       price: '',
-      image: '/src/assets/images/services_therapeutic_stones_1793280729422.jpg',
+      image: clinicImages.servicesStones,
       isFeatured: false,
       status: 'verified'
     },
@@ -82,7 +82,7 @@ export const initialClinicData: ClinicData = {
       category: 'facial',
       description: 'Tratamiento facial no invasivo diseñado para estimular la síntesis de colágeno, reafirmar contornos y recuperar la luminosidad.',
       price: '',
-      image: '/src/assets/images/about_facial_wellness_1793280727554.jpg',
+      image: clinicImages.aboutAlt,
       isFeatured: false,
       status: 'preliminary'
     },
@@ -92,7 +92,7 @@ export const initialClinicData: ClinicData = {
       category: 'facial',
       description: 'Protocolo bioestimulante autólogo orientado a la regeneración celular y revitalización de la textura dérmica.',
       price: '',
-      image: '/src/assets/images/services_facial_skincare_1793280727497.jpg',
+      image: clinicImages.servicesSkincare,
       isFeatured: false,
       status: 'preliminary'
     },
@@ -102,7 +102,7 @@ export const initialClinicData: ClinicData = {
       category: 'corporal',
       description: 'Sesiones de movilidad asistida, fortalecimiento suave y rehabilitación preventiva adaptada a cada condición física.',
       price: '',
-      image: '/src/assets/images/expertise_clinic_lounge_1793280728248.jpg',
+      image: clinicImages.expertiseLounge,
       isFeatured: false,
       status: 'preliminary'
     },
@@ -112,7 +112,7 @@ export const initialClinicData: ClinicData = {
       category: 'especiales',
       description: 'Certificados de regalo personalizables para sorprender a seres queridos con sesiones de relajación y cuidado facial.',
       price: '',
-      image: '/src/assets/images/hero_skincare_portrait_1793280726421.jpg',
+      image: clinicImages.heroAlt,
       isFeatured: false,
       status: 'preliminary'
     }

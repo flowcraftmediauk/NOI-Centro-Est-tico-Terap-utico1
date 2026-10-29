@@ -94,7 +94,14 @@ export const ServicesSection: React.FC = () => {
                   <img
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                    onError={(e) => {
+                      const target = e.currentTarget;
+                      if (!target.dataset.fallbackApplied) {
+                        target.dataset.fallbackApplied = 'true';
+                        target.src = '/images/services_stones.jpg';
+                      }
+                    }}
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105 block"
                     loading="lazy"
                     referrerPolicy="no-referrer"
                   />

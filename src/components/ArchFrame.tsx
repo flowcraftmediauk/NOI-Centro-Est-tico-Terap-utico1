@@ -32,12 +32,19 @@ export const ArchFrame: React.FC<ArchFrameProps> = ({
       />
 
       {/* Main Arch Image Container */}
-      <div className="relative z-10 overflow-hidden rounded-t-[160px] rounded-b-[48px] shadow-sm bg-[#FFF5EC] border-4 border-white aspect-[3/4]">
+      <div className="relative z-10 overflow-hidden rounded-t-[160px] rounded-b-[48px] shadow-sm bg-[#FAF0E6] border-4 border-white aspect-[3/4]">
         <img
           src={imageSrc}
           alt={altText}
-          className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
-          loading="lazy"
+          onError={(e) => {
+            const target = e.currentTarget;
+            if (!target.dataset.fallbackApplied) {
+              target.dataset.fallbackApplied = 'true';
+              target.src = '/images/hero_portrait.jpg';
+            }
+          }}
+          className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105 block"
+          loading="eager"
           referrerPolicy="no-referrer"
         />
 

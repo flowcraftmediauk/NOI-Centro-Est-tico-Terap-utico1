@@ -20,14 +20,26 @@ interface ClinicContextType {
 
 const ClinicContext = createContext<ClinicContextType | undefined>(undefined);
 
-const STORAGE_KEY = 'noi_clinic_demo_data_v1';
-const QUESTIONS_STORAGE_KEY = 'noi_clinic_questions_v1';
+const STORAGE_KEY = 'noi_clinic_demo_data_v2';
+const QUESTIONS_STORAGE_KEY = 'noi_clinic_questions_v2';
 
 export const ClinicProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [data, setData] = useState<ClinicData>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEY);
-      if (saved) return JSON.parse(saved);
+      if (saved) {
+        const parsed = JSON.parse(saved);
+        // Sanitize legacy /src/assets paths if found
+        if (parsed.services) {
+          parsed.services = parsed.services.map((s: ClinicService, idx: number) => {
+            if (s.image && s.image.includes('/src/assets/images')) {
+              return { ...s, image: initialClinicData.services[idx]?.image || '/images/services_stones.jpg' };
+            }
+            return s;
+          });
+        }
+        return parsed;
+      }
     } catch {
       // ignore
     }

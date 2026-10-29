@@ -3,10 +3,11 @@ import { useClinic } from '../context/ClinicContext';
 import { ArchFrame } from './ArchFrame';
 import { SparkleIcon } from './SparkleIcon';
 import { CheckCircle2, MessageCircle } from 'lucide-react';
+import { clinicImages } from '../assets/images';
 
 export const ExpertiseSection: React.FC = () => {
   const { data } = useClinic();
-  const expertiseImage = '/src/assets/images/expertise_clinic_lounge_1793280728248.jpg';
+  const expertiseImage = clinicImages.expertiseLounge;
 
   const whatsappHref = `https://wa.me/${data.whatsappRaw}?text=${encodeURIComponent(
     'Hola NOI Centro Estético, deseo solicitar una valoración personalizada para mis cuidados.'

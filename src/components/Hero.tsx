@@ -4,10 +4,12 @@ import { ArchFrame } from './ArchFrame';
 import { SparkleIcon, SmallSparkleIcon } from './SparkleIcon';
 import { MessageCircle, ArrowDown } from 'lucide-react';
 
+import { clinicImages } from '../assets/images';
+
 export const Hero: React.FC = () => {
   const { data } = useClinic();
 
-  const heroImage = '/src/assets/images/hero_skincare_portrait_1793280726421.jpg';
+  const heroImage = clinicImages.hero;
   const whatsappHref = `https://wa.me/${data.whatsappRaw}?text=${encodeURIComponent(
     'Hola NOI Centro Estético, deseo información sobre sus tratamientos y consultar disponibilidad para una valoración.'
   )}`;
@@ -46,13 +48,13 @@ export const Hero: React.FC = () => {
 
             {/* Unboxed Metadata (Zero-Pill discipline) */}
             <div className="flex flex-wrap items-center gap-3 text-xs sm:text-sm text-[#681B36]/80 pt-1">
-              <span className="font-medium">Cuenca</span>
+              <span className="font-medium" translate="no">Cuenca</span>
               <span aria-hidden="true" className="text-[#D9828B]">·</span>
-              <span className="font-medium">Paute</span>
+              <span className="font-medium" translate="no">Paute</span>
               <span aria-hidden="true" className="text-[#D9828B]">·</span>
-              <span className="font-medium">Azogues</span>
+              <span className="font-medium" translate="no">Azogues</span>
               <span aria-hidden="true" className="text-[#D9828B]">·</span>
-              <span className="font-medium text-[#D9828B]">Ecuador</span>
+              <span className="font-medium text-[#D9828B]" translate="no">Ecuador</span>
             </div>
 
             {/* Action Buttons inspired by reference design */}

@@ -62,7 +62,7 @@ export const LocationsContactSection: React.FC = () => {
                   <span className="text-xs font-medium text-[#D9828B] uppercase tracking-wider">
                     Sede {idx + 1}
                   </span>
-                  <h3 className="font-serif text-2xl font-bold text-[#422B30]">
+                  <h3 className="font-serif text-2xl font-bold text-[#422B30]" translate="no">
                     {loc.city}
                   </h3>
                   <p className="text-xs text-[#422B30]/65 mt-0.5">

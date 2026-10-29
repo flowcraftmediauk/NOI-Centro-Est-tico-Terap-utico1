@@ -3,10 +3,11 @@ import { useClinic } from '../context/ClinicContext';
 import { ArchFrame } from './ArchFrame';
 import { SparkleIcon } from './SparkleIcon';
 import { ShieldCheck, Heart, Sparkles } from 'lucide-react';
+import { clinicImages } from '../assets/images';
 
 export const AboutSection: React.FC = () => {
   const { data } = useClinic();
-  const aboutImage = '/src/assets/images/about_facial_wellness_1793280727554.jpg';
+  const aboutImage = clinicImages.about;
 
   return (
     <section id="nosotros" className="relative py-20 md:py-28 bg-white rounded-t-[48px] md:rounded-t-[80px] -mt-10 shadow-xs z-10">
@@ -55,7 +56,7 @@ export const AboutSection: React.FC = () => {
                   <Sparkles size={18} className="text-white/80" />
                 </div>
                 <p className="text-sm font-semibold tracking-wide">Sedes en el Austro</p>
-                <p className="text-xs text-white/85 mt-1">Cuenca · Paute · Azogues</p>
+                <p className="text-xs text-white/85 mt-1" translate="no">Cuenca · Paute · Azogues</p>
               </div>
 
               {/* Highlight 2: Warm Cream Card */}
